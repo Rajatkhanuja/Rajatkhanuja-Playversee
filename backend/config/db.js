@@ -1,5 +1,13 @@
 import mongoose from "mongoose";
 
 export const connectDB = async () => {
-    await mongoose.connect('mongodb://localhost:27017/').then(()=>console.log("DB Connected"));
-}    
+    try {
+        await mongoose.connect('mongodb://localhost:27017/playverse', {
+            useNewUrlParser: true,
+        });
+        console.log("DB Connected");
+    } catch (error) {
+        console.error("DB Connection Failed:", error.message);
+        process.exit(1);
+    }
+};

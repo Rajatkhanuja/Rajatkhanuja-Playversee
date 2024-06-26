@@ -1,13 +1,13 @@
 import mongoose from "mongoose";
 
 const gameSchema = new mongoose.Schema({
-    name: {type: string,required: true},
-    description: {type: string,required: true},
-    price: {type: string,required: true},
-    image:{type: string,required: true},
-    category: {type:string,required: true}
-})   
+    name: { type: String, required: true },
+    description: { type: String, required: true },
+    price: { type: String, required: true },
+    image: { type: String, required: true },
+    category: { type: String, required: true }
+});
 
-const GameModel = mongoose.model.game || mongoose.model("Game", gameSchema);
+const GameModel = mongoose.models.Game || mongoose.model("Game", gameSchema);
 
 export default GameModel;
